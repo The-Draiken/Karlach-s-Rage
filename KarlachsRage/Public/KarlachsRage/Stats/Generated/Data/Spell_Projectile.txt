@@ -1,0 +1,9 @@
+new entry "Projectile_Fireball_KAR"
+type "SpellData"
+using "Projectile_Fireball"
+data "ExplodeRadius" "6"
+data "SpellSuccess" "DealDamage(10d6,Fire,Magical);"
+data "SpellFail" "DealDamage((10d6)/2,Fire,Magical);"
+data "UseCosts" "ActionPoint:1;"
+data "SpellFlags" "HasVerbalComponent;HasSomaticComponent;HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;CanAreaDamageEvade;IgnoreSilence"
+

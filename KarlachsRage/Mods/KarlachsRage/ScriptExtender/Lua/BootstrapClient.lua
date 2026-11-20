@@ -1,0 +1,7 @@
+Ext.Require("Shared/KR_Globals.lua")
+Ext.Require("Shared/Config_KarlachsRage.lua")
+Ext.Require("Shared/MCM_Integration.lua")
+Ext.Require("Client/ItemIndex_Client.lua")
+Ext.Require("Client/ImmuneItemConfigMenu.lua")
+Ext.Require("Client/DebugMenu.lua")
+Ext.Utils.Print("[KarlachsRage] BootstrapClient loaded")

@@ -1,0 +1,43 @@
+new entry "Infernal_Engine_Immunity"
+type "PassiveData"
+data "DisplayName" "h83d2a5f2g69e8gde47g18fdg29d75c2b8f78;1"
+data "Description" "h5608d193g77f5g367cgff06ga5efddd2321a;1"
+data "Icon" "PassiveFeature_Tiefling_HellishResistance"
+data "Properties" "Highlighted"
+data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);"
+
+new entry "KAR_Rage_Immune_Fire"
+type "PassiveData"
+data "Description" "h70518b18ga5feg0b29gc949g0a5d1b009b57;1"
+data "Boosts" "Resistance(Fire, Immune);"
+
+new entry "KAR_Rage_Immune_Bludgeoning"
+type "PassiveData"
+data "Description" "h601a800fg9753g0896g9b5ag229e95fcc4ad;1"
+data "Boosts" "Resistance(Bludgeoning, Immune);"
+
+new entry "KAR_Rage_Immune_Piercing"
+type "PassiveData"
+data "Description" "h38e64380g99a9g2090gb527gb952be9309e3;1"
+data "Boosts" "Resistance(Piercing, Immune);"
+
+new entry "KAR_Rage_Immune_Slashing"
+type "PassiveData"
+data "Description" "h547d548agc309ge633geb75gbcac24a3c619;1"
+data "Boosts" "Resistance(Slashing, Immune);"
+
+new entry "KAR_Rage_Immune_Thunder"
+type "PassiveData"
+data "Description" "h3282d775g4f43gfd27g3833g7050aaf3297a;1"
+data "Boosts" "Resistance(Thunder, Immune);"
+
+new entry "KAR_Rage_Immune_Force"
+type "PassiveData"
+data "Description" "hd9e4e4b3gdcb8ga924gfd93g13db63b074f9;1"
+data "Boosts" "Resistance(Force, Immune);"
+
+new entry "KAR_Rage_Vulnerable_Cold"
+type "PassiveData"
+data "Description" "hd9e4e4b3gdcb8ga924gfd93g13db63b074f9;1"
+data "Boosts" "Resistance(Cold, Vulnerable);"
+

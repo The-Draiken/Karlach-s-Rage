@@ -1,0 +1,108 @@
+new entry "Karlach_Boost"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h5620e528g6659g4588gbcfbgddb83b46361a;1"
+data "Description" "hee8b156fgfccagf1f1g07f9g0138aeb4def3;1"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "Toggle" "Yes"
+data "Passives" "Infernal_Engine_Immunity;"
+
+new entry "KAR_RAGE_FIRE_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h5620e528g6659g4588gbcfbgddb83b46361a;1"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "StackId" "KAR_RAGE_FIRE_AURA"
+data "TickType" "StartTurn"
+data "AuraRadius" "2"
+data "AuraStatuses" "TARGET:IF(not Self()):ApplyStatus(BURNING,100,1)"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead"
+
+
+// ============================================
+// Karlach Rage stage chain (engine-timed)
+// These statuses drive turn-based progression via TickType=EndTurn.
+// Lua chains stages on StatusRemoved, and in Brawl/real-time removes stages after N seconds.
+// StackId keeps only one stage active at a time.
+// ============================================
+
+new entry "KAR_RAGE_STAGE_FIRE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "KAR_RAGE_STAGE"
+data "TickType" "StartTurn"
+data "Duration" "2"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "Passives" "KAR_Rage_Immune_Fire;KAR_Rage_Vulnerable_Cold;"
+
+new entry "KAR_RAGE_STAGE_BLUNT"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "KAR_RAGE_STAGE"
+data "TickType" "StartTurn"
+data "Duration" "2"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "Passives" "KAR_Rage_Immune_Fire;KAR_Rage_Immune_Bludgeoning;KAR_Rage_Vulnerable_Cold;"
+
+new entry "KAR_RAGE_STAGE_SLASH"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "KAR_RAGE_STAGE"
+data "TickType" "StartTurn"
+data "Duration" "2"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "Passives" "KAR_Rage_Immune_Fire;KAR_Rage_Immune_Bludgeoning;KAR_Rage_Immune_Slashing;KAR_Rage_Vulnerable_Cold;"
+
+new entry "KAR_RAGE_STAGE_PIERCE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "KAR_RAGE_STAGE"
+data "TickType" "StartTurn"
+// 3 turns after Piercing is applied -> transition to THUNDER stage
+// (THUNDER stage re-includes Piercing, so Piercing stays effectively active)
+data "Duration" "3"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "Passives" "KAR_Rage_Immune_Fire;KAR_Rage_Immune_Bludgeoning;KAR_Rage_Immune_Slashing;KAR_Rage_Immune_Piercing;KAR_Rage_Vulnerable_Cold;"
+
+new entry "KAR_RAGE_STAGE_THUNDER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "KAR_RAGE_STAGE"
+data "TickType" "StartTurn"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "Passives" "KAR_Rage_Immune_Fire;KAR_Rage_Immune_Bludgeoning;KAR_Rage_Immune_Slashing;KAR_Rage_Immune_Piercing;KAR_Rage_Immune_Thunder;KAR_Rage_Vulnerable_Cold;"
+
+new entry "KAR_RAGE_STAGE_Force"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackType" "Additive"
+data "TickType" "StartTurn"
+data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead;DisablePortraitIndicator"
+data "Icon" "PassiveFeature_KarlachUpgrade_1"
+data "Boosts" "Ability(Strength,4);Ability(Dexterity,2);Ability(Constitution,1)"
+data "Passives" "KAR_Rage_Immune_Fire;KAR_Rage_Immune_Bludgeoning;KAR_Rage_Immune_Slashing;KAR_Rage_Immune_Piercing;KAR_Rage_Immune_Thunder;KAR_Rage_Immune_Force;KAR_Rage_Vulnerable_Cold;"
+data "StatusEffect" "b7eed9a0-e40e-40ed-a3fa-9e74d5f358df"
+
+new entry "ORI_KARLACH_INFERNAL_FURY"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h90c7c73egf320g4a2dg97aag080c478075a9;3"
+data "Description" "h5484526eg3d0cg4d8agacd3g6d44b3e77561;5"
+data "DescriptionParams" "DealDamage(1d4, Fire)"
+data "Icon" "GenericIcon_DamageType_Fire"
+data "SoundStart" "Misc_Status_KarlachInfernal_Start"
+data "SoundLoop" "Misc_Status_KarlachInfernal_MO"
+data "SoundStop" "Misc_Status_KarlachInfernal_End"
+data "StackId" "ORI_KARLACH_INFERNAL_FURY"
+data "Passives" "Karlach_Infernal_Fury"
+data "StatusEffect" "3748c870-63e8-4398-824a-581ee7250b3f"
+// Soul Coin rage: while Karlach has Infernal Fury, top up the hidden RAGE_STOP_REMOVE
+// status at the start of every turn she is raging, so Rage never ends from inactivity.
+// (Duration 2 so it always outlasts the end of the current turn.)
+data "TickType" "StartTurn"
+data "TickFunctors" "IF(HasStatus('SG_Rage')):ApplyStatus(RAGE_STOP_REMOVE,100,2)"

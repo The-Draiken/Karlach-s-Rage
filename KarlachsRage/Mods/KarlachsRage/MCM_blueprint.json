@@ -1,0 +1,28 @@
+{
+  "SchemaVersion": 1,
+  "ModName": "Karlach's Rage",
+  "Tabs": [
+    {
+      "TabId": "general",
+      "TabName": "General",
+      "Sections": [
+        {
+          "SectionId": "item_immunities",
+          "SectionName": "Protected items",
+          "Settings": [
+            {
+              "Id": "immune_stat_list",
+              "Name": "Protected item StatNames (text)",
+              "Type": "text",
+              "Default": "",
+              "Description": "Items listed here are protected from Karlach's rage destruction. The custom Immune Items tab can populate this automatically.",
+              "Options": {
+                "Multiline": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

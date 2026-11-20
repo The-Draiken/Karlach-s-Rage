@@ -1,0 +1,8 @@
+Ext.Require("Shared/KR_Globals.lua")
+Ext.Require("Shared/Config_KarlachsRage.lua")
+Ext.Require("Shared/MCM_Integration.lua")
+Ext.Require("Server/ItemIndex_Server.lua")
+Ext.Require("Server/ImmuneList_Server.lua")
+Ext.Require("Server/Karlach_Rage_StatusChain.lua")
+Ext.Require("Server/Karlach_Rage_Force_Fireball.lua")
+Ext.Utils.Print("[KarlachsRage] BootstrapServer loaded")

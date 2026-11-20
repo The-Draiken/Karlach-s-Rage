@@ -1,0 +1,3 @@
+new entry "GLO_SoulCoin"
+type "Object"
+data "ValueOverride" "5000"
