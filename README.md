@@ -9,7 +9,7 @@ A Baldur's Gate 3 mod that turns Karlach's Rage into a growing infernal fury. Th
 | Requirement | Notes |
 |---|---|
 | [BG3 Script Extender](https://github.com/Norbyte/bg3se) | Required. All of the progression logic runs in Lua. |
-| True Rage Unlimited
+| True Rage Unlimited | Installed Prior to Karlach's Rage in the Load Order | 
 | [Mod Configuration Menu (MCM)](https://www.nexusmods.com/baldursgate3/mods/9162) | Optional. Adds the **Immune Items** and **Debug** tabs. |
 
 ## Features
@@ -64,5 +64,5 @@ There are **no overhead indicators** for the tiers. Count her turns, or check he
 The Script Extender console prints every step with a `[KarlachsRage]` prefix, for example `Rage shout detected`, `APPLY_STAGE_TB`, `TB turn decrement` and `Ending rage progression`. Include those lines when you report a bug.
 
 ## Comments and Reports
-You can comment about the Mod here: https://rpghq.org/forums/viewtopic.php?p=433809-karlach-s-rage-5-baldur-s-gate-3 . (Be aware of the kind of Website this is if you venture out of my Thread though, people on the site are pretty unhinged.)
+You can comment about the Mod [Here](https://rpghq.org/forums/viewtopic.php?p=433809-karlach-s-rage-5-baldur-s-gate-3). (Be aware of the kind of Website this is if you venture out of my Thread though, people on the site are pretty unhinged.)
 
